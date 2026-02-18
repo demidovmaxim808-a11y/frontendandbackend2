@@ -1,0 +1,47 @@
+// Переменные (минимум 2)
+$primary-color: #2c3e50;       // основной цвет текста и акцентов
+$border-radius: 12px;           // радиус скругления углов карточки
+
+// Миксин для тени карточки (принимает параметр — интенсивность тени)
+@mixin card-shadow($opacity: 0.1) {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, $opacity);
+    transition: box-shadow 0.3s ease;
+}
+
+// Стили карточки с использованием вложенности
+.card {
+    max-width: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: $border-radius;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    @include card-shadow(0.15); // подключение миксина
+
+    // Вложенный элемент — изображение
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    // Вложенный элемент — заголовок
+    &__title {
+        margin: 16px 16px 8px;
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+
+    // Вложенный элемент — описание
+    &__description {
+        margin: 0 16px 20px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: lighten($primary-color, 20%);
+    }
+
+    // Эффект при наведении на карточку (дополнительно)
+    &:hover {
+        @include card-shadow(0.25);
+    }
+}
