@@ -2,11 +2,9 @@ import axios from 'axios';
 
 // Определяем базовый URL в зависимости от того, откуда открыт сайт
 const getBaseURL = () => {
-  // Если сайт открыт через localhost
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     return 'http://localhost:3000';
   }
-  // Если через IP-адрес
   return `http://${window.location.hostname}:3000`;
 };
 

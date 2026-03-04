@@ -1,7 +1,7 @@
 {
   "name": "techmart-backend",
   "version": "1.0.0",
-  "description": "Backend for TechMart store",
+  "description": "Backend for TechMart store with Swagger",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,7 +10,9 @@
   "dependencies": {
     "express": "^4.22.1",
     "nanoid": "^5.0.7",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
